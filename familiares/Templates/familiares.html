@@ -6,18 +6,32 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+
 </head>
 <body>
 
-<h1> Los integrantes de mi familia son...</h1>
+<nav class="navbar navbar-expand-lg bg-light">
+  <div class="container-md">
+    <a class="navbar-brand" href="http://127.0.0.1:8000/">VOLVER</a>
+  </div>
+</nav>
+
+<br><h1> Los integrantes de mi familia son...</h1><br>
 
 {% for persona in integrantes %}
-<h3>    El nombre es: {{persona.name}} </h3>
-<h3>    Su apellido es: {{persona.lastname}} </h3>
-<h5>    Su edad es: {{persona.edad}}
-        Nacimiento: {{persona.datebirth}}
-        Relación parental: {{persona.relathionship}}</h5>
+
+<div class="card" style="width: 18rem;">
+    <div class="card-header">
+        {{persona.relathionship}}
+    </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">Nombre: {{persona.name}} {{persona.lastname}}</li>
+    <li class="list-group-item">Edad: {{persona.edad}}</li>
+    <li class="list-group-item">Nacimiento: {{persona.datebirth}}</li>
+  </ul>
+</div>
 
 {% endfor %}
+
 </body>
 </html>

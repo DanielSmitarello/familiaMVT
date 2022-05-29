@@ -4,6 +4,7 @@ from django.http import HttpResponse
 from datetime import datetime
 
 # Create your views here.
+
 def familiares(request): #cree la página
     contex = {
     }
@@ -22,7 +23,7 @@ def mostrarfamily(request): #me crea el llamado del objeto que carga los datos d
     }
     return render(request, "familiares.html", context = context)
 
-def time(request):
+def time(request): #Función del tiempo.
     hora = datetime.now()
     context = {
         'hora': hora,
